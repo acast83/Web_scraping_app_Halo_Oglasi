@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas
 
 url="https://www.halooglasi.com/nekretnine/prodaja-stanova/jagodina?page="
-lista_oglasa=[]  #lista u koju smestamo sve podatke koje smo pokupili iz svih oglasa
+lista_oglasa=[]  #lista u kojoj smestamo sve podatke koje smo pokupili iz svih oglasa
 page=0
 
 while True:
@@ -14,7 +14,7 @@ while True:
     #izvlacenje html koda stranice
     soup=BeautifulSoup(c,'html.parser')
 
-    #izvlacenje html koda unutar koga se nalaze podaci za pojedinacne top oglase
+    #izvlacenje html koda unutar kog se nalaze podaci vezani za pojedinacne top oglase
     top_ads=soup.find_all("div",{"class":"product-item product-list-item Top real-estates my-product-placeholder"})
 
     #izvlacenje html koda unutar koga se nalaze ostali oglasi(nisu u top sekciji na vrhu)
@@ -80,7 +80,7 @@ while True:
 
         for index in range(len(regular_ads)):
 
-            reg_ads_dict={}  #dict u koji smestamo podatke vezane za pojedinacne oglase koji nisu u top sekciji
+            reg_ads_dict={}  #dict u kome smestamo podatke vezane za pojedinacne oglase koji nisu u top sekciji
 
             #naslov oglasa
             reg_ads_dict["Naslov"]=regular_ads[index].find("h3",{"class","product-title"}).text
