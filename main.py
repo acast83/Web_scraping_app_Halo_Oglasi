@@ -108,7 +108,7 @@ while True:
             #broj soba
             reg_ads_dict["Broj soba"]=inner_apa_data_list[1].replace("\xa0Broj soba","")
 
-            #spratnost
+            #spratnost stana
             try:
                 reg_ads_dict["Spratnost"]=inner_apa_data_list[2].replace("\xa0Spratnost","")
             except:
