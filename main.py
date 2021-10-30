@@ -11,7 +11,7 @@ while True:
     r=requests.get(url+str(page))
     c=r.content
 
-    #izvlacenje html koda stranice
+    #izvlacenje html koda stranice.
     soup=BeautifulSoup(c,'html.parser')
 
     #izvlacenje html koda unutar kog se nalaze podaci vezani za pojedinacne top oglase
